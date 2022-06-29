@@ -22,8 +22,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/profile/{user_id}',[\App\Http\Controllers\UserController::class,'index']);
+Route::get('/article/create',[\App\Http\Controllers\ArticleController::class,'create'])->name('article.create');
+Route::get('/article/{article_id}',[\App\Http\Controllers\ArticleController::class,'show'])->name('article.show');
 Route::get('/article',[\App\Http\Controllers\ArticleController::class,'index'])->name('article.index');
 Route::post('/article/store',[\App\Http\Controllers\ArticleController::class,'store'])->name('article.store');
-Route::get('/article/create',[\App\Http\Controllers\ArticleController::class,'create'])->name('article.create');
+
+Route::post('/category/create',[\App\Http\Controllers\CategoryController::class,'store'])->name('category.store');
+
 
 
