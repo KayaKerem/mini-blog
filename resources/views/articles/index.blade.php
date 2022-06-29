@@ -22,25 +22,26 @@
         </div>
     </div>-->
             @foreach($articles as $article)
-                <div class="col-md-8">
+                <div class="col-md-8 pb-5">
                     <div class="card">
                         <img class="card-img-top"
                              style="width: 100%;
                         height: 15vw;
                         object-fit: cover;"
-                             src="{{$article->image}}"
+                             src="{{$article->thumbnail()}}"
                              alt="Card image cap">
                         <h5 class="card-title">{{$article->title}}</h5>
                         <p class="card-text">
                             {{$article->content}}
-                            DENEME
-                            {{$article->image}}
+                            PATH : {{$article->thumbnail()}}
+
                         </p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
 
                     </div>
-
+                    <hr>
                 </div>
+
             @endforeach
 
 
