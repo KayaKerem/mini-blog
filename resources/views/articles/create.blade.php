@@ -42,9 +42,19 @@
                             <div class="row mb-3">
                                 <label for="category" class="col-md-4 col-form-label-lg text-md-end">{{ __('Category') }}</label>
 
-                                <div class="col-md-6">
+<!--                                <div class="col-md-6">
                                     <input id="category" type="category" class="form-control @error('category') is-invalid @enderror" name="category" required autocomplete="category">
 
+
+                                </div>-->
+                                <div class="col-md-6">
+                                <select name="category" id="category">
+                                        @foreach($categories as $cat)
+                                        <option value="{{  $cat->category  }}">{{  $cat->category  }}</option>
+                                    @endforeach
+                                </select>
+
+                                    <span class="px-4"> <a class="" href="/category/create"> Add new category </a></span>
                                     @error('category')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
